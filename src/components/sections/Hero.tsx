@@ -106,7 +106,7 @@ export default function Hero() {
             {/* CTA */}
             <a
               href="#formulario"
-              className="inline-flex items-center justify-center bg-[#ff8602] text-white font-bold text-sm uppercase tracking-widest px-10 py-4 rounded-lg w-fit min-h-[52px] hover:opacity-90 transition-opacity mt-1"
+              className="cta-button inline-flex items-center justify-center text-white font-bold text-sm uppercase tracking-widest px-10 py-4 rounded-lg w-fit min-h-[52px] mt-1"
             >
               {HERO.CTA}
             </a>
@@ -168,7 +168,7 @@ export default function Hero() {
                 />
                 <button
                   type="submit"
-                  className="w-full bg-[#ff8602] text-white font-bold uppercase tracking-widest py-4 rounded-lg min-h-[52px] hover:opacity-90 transition-opacity mt-2 cursor-pointer"
+                  className="cta-button w-full text-white font-bold uppercase tracking-widest py-4 rounded-lg min-h-[52px] mt-2 cursor-pointer"
                 >
                   Enviar
                 </button>

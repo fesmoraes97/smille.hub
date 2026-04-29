@@ -29,6 +29,42 @@
   }
 }
 
+.cta-button {
+  border: 1px solid #27c165;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #00ac45 0%, #00ac45 55%, #0c5828 100%);
+  box-shadow: 0px 5px 11.16px 0.84px rgba(0, 0, 0, 0.27);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.cta-button:hover {
+  transform: scale(1.04);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.35);
+}
+.cta-button::after {
+  content: '';
+  position: absolute;
+  top: -60%;
+  left: -80%;
+  width: 45%;
+  height: 220%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.38) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-18deg);
+  animation: cta-flare 2.8s ease-in-out infinite;
+}
+@keyframes cta-flare {
+  0%   { left: -80%; opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { left: 130%; opacity: 0; }
+}
+
 body {
   font-family: var(--font-sans);
   background-color: #3b0e5e;
