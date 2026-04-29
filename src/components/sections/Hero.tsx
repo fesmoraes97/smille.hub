@@ -50,16 +50,16 @@ export default function Hero() {
   return (
     <section className="relative" id="hero">
 
-      {/* Background — define a altura da seção sem distorção */}
+      {/* Imagem — define a altura da seção */}
       <img
         src="assets/images/baackground-hero-smille.webp"
         alt=""
         aria-hidden="true"
-        className="w-full block"
+        className="relative w-full block"
       />
 
       {/* Conteúdo sobreposto */}
-      <div className="absolute inset-0 z-10 max-w-[1440px] mx-auto px-6 py-16 md:px-20 md:pt-[40px] md:pb-[120px] grid grid-cols-1 md:grid-cols-[1fr_420px] gap-6 md:gap-12 items-center w-full">
+      <div className="absolute inset-0 z-10 max-w-[1440px] mx-auto px-6 py-16 md:px-20 md:pt-[40px] md:pb-[40px] grid grid-cols-1 md:grid-cols-[1fr_420px] gap-6 md:gap-12 items-center w-full">
 
         {/* Esquerda */}
         <div className="flex flex-col gap-10">
@@ -83,20 +83,19 @@ export default function Hero() {
             </h1>
           </div>
 
-          {/* Pills + CTA com glow */}
-          <div className="relative flex flex-col gap-3 w-fit">
-            {/* Glow */}
-            <div
-              className="absolute -inset-6 rounded-3xl -z-10"
-              style={{ backgroundColor: '#f2e6f3', filter: 'blur(28px)', opacity: 1 }}
-            />
+          {/* Pills + CTA */}
+          <div className="flex flex-col gap-3 w-fit">
 
             {HERO.PILLS.map((text, i) => {
               const Icon = PILL_ICONS[i]
               return (
                 <div
                   key={text}
-                  className="flex items-center gap-3 bg-[#622690] rounded-full px-5 py-3 w-fit"
+                  className="flex items-center gap-3 rounded-full px-5 py-3 w-fit"
+                  style={{
+                    background: 'linear-gradient(to right, #622690, #8b45c0)',
+                    borderBottom: '2px solid #ff8602',
+                  }}
                 >
                   <Icon size={18} className="text-white shrink-0" />
                   <span className="text-sm font-medium text-white">{text}</span>

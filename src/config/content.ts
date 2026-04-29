@@ -23,3 +23,32 @@ export const HERO = {
   FORM_TITLE: 'Preencha o formulário e garanta',
   FORM_TITLE_HIGHLIGHT: 'condições exclusivas',
 } as const
+
+export const O_QUE_FAZEMOS = {
+  HEADLINE_BEFORE: 'Estratégias pensadas para ',
+  HEADLINE_HIGHLIGHT: 'gerar resultado,',
+  HEADLINE_AFTER: ' não só tráfego',
+  IMAGE: 'assets/images/img-1.webp',
+  TOPICS: [
+    {
+      headline: 'Tráfego Pago',
+      descritivo: 'Campanhas inteligentes focadas em geração de leads e vendas.',
+    },
+    {
+      headline: 'Social Media',
+      descritivo: 'Posicionamento que gera autoridade e atrai clientes.',
+    },
+    {
+      headline: 'SEO',
+      descritivo: 'Seja encontrado por quem já está procurando sua solução.',
+    },
+    {
+      headline: 'Performance & Otimização',
+      descritivo: 'Ajustes constantes para escalar resultados com eficiência.',
+    },
+    {
+      headline: 'Consultoria Comercial',
+      descritivo: 'Alinhamos marketing e vendas para acelerar resultados e gerar crescimento.',
+    },
+  ],
+} as const
