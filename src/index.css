@@ -1,18 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 @source "./**/*.{ts,tsx}";
 
 @theme {
-  /* Preenchido pelo Agente 01 */
-}
+  --color-background: #FBECFF;
+  --color-text: #1E1A20;
+  --color-headline: #622690;
+  --radius: 8px;
+  --font-sans: 'Work Sans', sans-serif;
 
-/* ⚠️ REGRA ABSOLUTA: NUNCA coloque resets CSS fora de @layer.
-   O Tailwind v4 coloca todos os utilitários dentro de @layer utilities.
-   Estilos fora de @layer têm prioridade sobre @layer independente de especificidade,
-   anulando silenciosamente classes como py-, px-, mx-auto, gap-, etc. */
+  --spacing-section-x-desktop: 80px;
+  --spacing-section-x-mobile: 24px;
+  --spacing-section-y-desktop: 120px;
+  --spacing-section-y-mobile: 64px;
+  --spacing-gap-desktop: 48px;
+  --spacing-gap-mobile: 24px;
+
+  --container-max: 1440px;
+}
 
 @layer base {
   html {
     scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1;
   }
 }
 
@@ -21,4 +34,5 @@ body {
   background-color: var(--color-background);
   color: var(--color-text);
   -webkit-font-smoothing: antialiased;
+  margin: 0;
 }
