@@ -4,7 +4,7 @@
 
 | Token | Valor |
 |---|---|
-| `--color-background` | `#FBECFF` |
+| `--color-background` | `#f2e6f3` |
 | `--color-text` | `#1E1A20` |
 | `--color-headline` | `#622690` |
 | `--radius` | `8px` |
