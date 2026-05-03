@@ -54,6 +54,51 @@ export const ESTRATEGIA = {
   ],
 } as const
 
+export const FOOTER = {
+  ENDERECO: {
+    label: 'Endereço',
+    linha1: 'Rua Lorem Ipsum, 000',
+    linha2: 'Bairro, Cidade/UF',
+    cep: 'CEP: 00000-000',
+  },
+  EMAIL: {
+    label: 'E-mail',
+    valor: 'contato@smillehub.com',
+  },
+  FUNCIONAMENTO: {
+    label: 'Funcionamento',
+    valor: 'Segunda à Sexta das 08h às 18h',
+  },
+  TELEFONE: {
+    label: 'Telefone',
+    valor: '11 91234-5678',
+  },
+  REDES: {
+    label: 'Redes Sociais',
+    facebook: 'https://facebook.com',
+    instagram: 'https://instagram.com',
+    linkedin: 'https://linkedin.com',
+  },
+  COPYRIGHT: 'Smille.Hub Marketing Digital - Todos os Direitos Reservados',
+} as const
+
+export const FORMULARIO = {
+  HEADLINE: 'Pronto para transformar marketing em uma máquina de vendas?',
+  SUBLINE: 'Se você quer parar de investir sem retorno e começar a crescer com previsibilidade, esse é o momento.',
+  IMAGE: 'assets/images/img-2.webp',
+} as const
+
+export const RESULTADOS = {
+  HEADLINE: 'Resultados vêm de método, não de sorte',
+  SUBLINE: 'Aplicamos processos validados para transformar investimento em crescimento previsível.',
+  IMAGE: 'assets/images/target.webp',
+  PILLS: [
+    'Sem contratos longos.',
+    'Sem promessas irreais.',
+    'Só estratégia, execução e resultado.',
+  ],
+} as const
+
 export const O_QUE_FAZEMOS = {
   HEADLINE_BEFORE: 'Estratégias pensadas para ',
   HEADLINE_HIGHLIGHT: 'gerar resultado,',

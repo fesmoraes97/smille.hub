@@ -3,7 +3,7 @@ import { ESTRATEGIA } from '@/config/content'
 
 const floatHover = {
   whileHover: { y: -14 },
-  transition: { type: 'spring', stiffness: 280, damping: 18 },
+  transition: { type: 'spring' as const, stiffness: 280, damping: 18 },
   shadowIdle: '0 8px 32px rgba(0,0,0,0.35)',
   shadowHover: '0 28px 60px rgba(0,0,0,0.5)',
 }
@@ -44,7 +44,7 @@ function BoxDescritivo({ index }: { index: number }) {
 
 export default function Estrategia() {
   return (
-    <section className="relative px-6 pb-16 md:px-20 md:pb-[80px]">
+    <section className="relative px-6 pb-[110px] md:px-20">
 
       {/* Divisória laranja */}
       <div className="w-full h-[2px] mb-16 md:mb-[80px]" style={{ backgroundColor: '#ff8602' }} />
@@ -59,7 +59,7 @@ export default function Estrategia() {
             <span className="text-[#ff8602]"> {ESTRATEGIA.HEADLINE_AFTER}</span>
           </h2>
 
-          <p className="text-base md:text-lg text-white/70 max-w-2xl mx-auto" style={{ lineHeight: 1.7 }}>
+          <p className="text-[22px] text-white/70 mx-auto" style={{ lineHeight: 1.3, maxWidth: 'fit-content' }}>
             {ESTRATEGIA.SUBLINE_BEFORE}
             <br className="hidden md:block" />
             {' '}<strong className="text-white font-semibold">{ESTRATEGIA.SUBLINE_BOLD}</strong>
@@ -67,7 +67,7 @@ export default function Estrategia() {
         </div>
 
         {/* 3 Boxes */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="relative grid grid-cols-1 md:grid-cols-3 gap-6" style={{ zIndex: 30 }}>
           {ESTRATEGIA.BOXES.map((box, i) => (
               <motion.div
                 key={box.headline}
