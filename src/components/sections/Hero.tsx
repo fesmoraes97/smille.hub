@@ -31,8 +31,8 @@ export default function Hero() {
 
           {/* Textos */}
           <div className="flex flex-col gap-5">
-            <p className="text-lg font-medium text-[#1E1A20]">
-              {HERO.PRE_HEADLINE}
+            <p className="text-[24px] font-medium text-[#1E1A20] leading-[1.1]">
+              Transforme investimento em<br />vendas previsíveis com
             </p>
             <h1 className="text-[56px] font-bold uppercase" style={{ lineHeight: 1 }}>
               <span className="block text-[#ff8602]">Campanhas</span>

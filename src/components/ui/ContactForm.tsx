@@ -12,13 +12,20 @@ const maskWhatsApp = (value: string) => {
 const isValidEmail = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)
 const isValidWhatsApp = (v: string) => v.replace(/\D/g, '').length === 11
 
-type Fields = { nome: string; email: string; whatsapp: string; mensagem: string }
+type Fields = { nome: string; email: string; whatsapp: string; faturamento: string; mensagem: string }
 type Touched = Partial<Record<keyof Fields, boolean>>
+
+const FATURAMENTO_OPTIONS = [
+  'Até 30 mil',
+  'De 30 a 100 mil',
+  'De 100 a 300 mil',
+  'Acima de 300 mil',
+]
 
 type ContactFormProps = { showTitle?: boolean }
 
 export default function ContactForm({ showTitle = true }: ContactFormProps) {
-  const [fields, setFields] = useState<Fields>({ nome: '', email: '', whatsapp: '', mensagem: '' })
+  const [fields, setFields] = useState<Fields>({ nome: '', email: '', whatsapp: '', faturamento: '', mensagem: '' })
   const [touched, setTouched] = useState<Touched>({})
   const [submitted, setSubmitted] = useState(false)
 
@@ -34,13 +41,14 @@ export default function ContactForm({ showTitle = true }: ContactFormProps) {
       : !isValidWhatsApp(fields.whatsapp)
         ? 'Número inválido (precisa ter 11 dígitos)'
         : '',
+    faturamento: !fields.faturamento ? 'Selecione uma opção' : '',
     mensagem: '',
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setTouched({ nome: true, email: true, whatsapp: true, mensagem: true })
-    if (errors.nome || errors.email || errors.whatsapp) return
+    setTouched({ nome: true, email: true, whatsapp: true, faturamento: true, mensagem: true })
+    if (errors.nome || errors.email || errors.whatsapp || errors.faturamento) return
     console.log('Enviando para:', CONFIG.FORM_ENDPOINT, fields)
     setSubmitted(true)
   }
@@ -72,6 +80,7 @@ export default function ContactForm({ showTitle = true }: ContactFormProps) {
               onBlur={() => setTouched((t) => ({ ...t, nome: true }))}
               error={touched.nome ? errors.nome : ''}
               placeholder="Seu nome completo"
+              required
             />
             <Field
               label="E-mail"
@@ -81,6 +90,7 @@ export default function ContactForm({ showTitle = true }: ContactFormProps) {
               onBlur={() => setTouched((t) => ({ ...t, email: true }))}
               error={touched.email ? errors.email : ''}
               placeholder="seu@email.com"
+              required
             />
             <Field
               label="WhatsApp"
@@ -90,6 +100,15 @@ export default function ContactForm({ showTitle = true }: ContactFormProps) {
               onBlur={() => setTouched((t) => ({ ...t, whatsapp: true }))}
               error={touched.whatsapp ? errors.whatsapp : ''}
               placeholder="(00) 00000-0000"
+              required
+            />
+            <SelectField
+              label="Qual o faturamento da sua empresa?"
+              value={fields.faturamento}
+              onChange={(v) => setFields((f) => ({ ...f, faturamento: v }))}
+              onBlur={() => setTouched((t) => ({ ...t, faturamento: true }))}
+              error={touched.faturamento ? errors.faturamento : ''}
+              options={FATURAMENTO_OPTIONS}
             />
             <Field
               label="Mensagem"
@@ -121,9 +140,10 @@ type FieldProps = {
   onBlur: () => void
   error: string
   placeholder: string
+  required?: boolean
 }
 
-function Field({ label, type, value, onChange, onBlur, error, placeholder }: FieldProps) {
+function Field({ label, type, value, onChange, onBlur, error, placeholder, required }: FieldProps) {
   const inputClass = cn(
     'w-full px-4 py-3 rounded-lg border text-sm text-[#1E1A20] outline-none transition-colors bg-gray-50 focus:bg-white',
     'focus:border-[#622690]',
@@ -149,8 +169,50 @@ function Field({ label, type, value, onChange, onBlur, error, placeholder }: Fie
           onChange={(e) => onChange(e.target.value)}
           onBlur={onBlur}
           placeholder={placeholder}
+          required={required}
         />
       )}
+      {error && <span className="text-xs text-red-500">{error}</span>}
+    </div>
+  )
+}
+
+type SelectFieldProps = {
+  label: string
+  value: string
+  onChange: (v: string) => void
+  onBlur: () => void
+  error: string
+  options: string[]
+}
+
+function SelectField({ label, value, onChange, onBlur, error, options }: SelectFieldProps) {
+  return (
+    <div className="flex flex-col gap-1">
+      <label className="text-sm font-medium text-[#1E1A20]">{label}</label>
+      <div className="relative">
+        <select
+          className={cn(
+            'w-full px-4 py-3 pr-10 rounded-lg border text-sm text-[#1E1A20] outline-none transition-colors bg-gray-50 focus:bg-white focus:border-[#622690] appearance-none cursor-pointer',
+            error ? 'border-red-400' : 'border-gray-200',
+            !value && 'text-gray-400'
+          )}
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          onBlur={onBlur}
+          required
+        >
+          <option value="" disabled>Selecione uma opção</option>
+          {options.map((opt) => (
+            <option key={opt} value={opt} className="text-[#1E1A20]">{opt}</option>
+          ))}
+        </select>
+        <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 6L8 10L12 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </span>
+      </div>
       {error && <span className="text-xs text-red-500">{error}</span>}
     </div>
   )
