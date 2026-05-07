@@ -24,6 +24,18 @@ export const HERO = {
   FORM_TITLE_HIGHLIGHT: 'condições exclusivas',
 } as const
 
+export const QUEM_SOMOS = {
+  HEADLINE: 'A Smille.Hub nasceu da união entre experiência, estratégia e inconformismo.',
+  PARAGRAFOS: [
+    'Depois de anos atuando no mercado, com dois executivos que somam quase três décadas de vivência em negócios, marketing e crescimento empresarial, entendemos uma verdade que muitas empresas ignoram: Crescer não deveria significar se tornar apenas mais um número dentro de uma agência.',
+    'Vimos de perto como grandes estruturas passaram a priorizar escala interna, processos engessados e volume de clientes, enquanto a qualidade do atendimento e a personalização das entregas ficaram em segundo plano.',
+    'E foi justamente por isso que decidimos construir algo diferente.',
+    'A Smille.Hub foi criada para atender pequenos e médios negócios que desejam crescer com estratégia, posicionamento e resultado. Mas que também valorizam parceria, proximidade e excelência em cada detalhe. Nós acreditamos que toda empresa merece não apenas uma agência, mas um time que pense junto, construa junto e cresça junto. Mais do que entregar marketing, entregamos visão, direcionamento e crescimento com propósito.',
+    'Porque para nós, cada cliente importa e cada marca tem valor. Cada resultado precisa refletir a confiança que foi depositada em nosso trabalho.',
+  ],
+  FECHAMENTO: 'Nós não nascemos para ser a maior, nascemos para ser a melhor.',
+} as const
+
 export const ESTRATEGIA = {
   HEADLINE_BEFORE: 'Você não precisa de mais cliques.',
   HEADLINE_AFTER: 'Precisa de estratégia.',

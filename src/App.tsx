@@ -1,5 +1,6 @@
 import Background from '@/components/ui/Background'
 import Hero from '@/components/sections/Hero'
+import QuemSomos from '@/components/sections/QuemSomos'
 import OQueFazemos from '@/components/sections/OQueFazemos'
 import Estrategia from '@/components/sections/Estrategia'
 import Resultados from '@/components/sections/Resultados'
@@ -12,6 +13,7 @@ export default function App() {
       <Background />
       <main className="relative" style={{ zIndex: 1 }}>
         <Hero />
+        <QuemSomos />
         <OQueFazemos />
 
         {/* Wrapper que permite a div-1.webp sobrepor a seção seguinte */}

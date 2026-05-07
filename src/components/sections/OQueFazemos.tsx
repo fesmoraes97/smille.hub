@@ -5,31 +5,32 @@ const ICONS = [Target, Share2, Search, Gauge, Briefcase]
 
 export default function OQueFazemos() {
   return (
-    <section className="relative px-6 pt-16 pb-16 md:px-20 md:pt-[40px] md:pb-[80px]">
-
+    <section
+      className="relative px-6 pt-16 pb-16 md:px-20 md:pt-[80px] md:pb-[80px]"
+      style={{ backgroundColor: '#fef7fe' }}
+    >
       <div className="relative max-w-[1440px] mx-auto flex flex-col gap-12">
 
         {/* Headline */}
         <h2
-          className="text-4xl md:text-[40px] font-bold text-white text-center uppercase"
-          style={{ lineHeight: 'calc(1em + 4px)' }}
+          className="text-4xl md:text-[40px] font-bold text-center uppercase"
+          style={{ color: '#622690', lineHeight: 'calc(1em + 4px)' }}
         >
           {O_QUE_FAZEMOS.HEADLINE_BEFORE}
           <br className="hidden md:block" />
-          <span className="text-[#ff8602]">{O_QUE_FAZEMOS.HEADLINE_HIGHLIGHT}</span>
+          <span style={{ color: '#ff8602' }}>{O_QUE_FAZEMOS.HEADLINE_HIGHLIGHT}</span>
           {O_QUE_FAZEMOS.HEADLINE_AFTER}
         </h2>
 
         {/* Corpo */}
         <div className="flex flex-col md:flex-row gap-12 items-center justify-center">
 
-          {/* Esquerda — imagem com glow */}
+          {/* Esquerda — imagem */}
           <div className="relative flex items-center justify-center shrink-0">
-            {/* Glow */}
             <div
               className="absolute inset-0 -inset-8 rounded-3xl"
               style={{
-                background: 'radial-gradient(ellipse at center, rgba(180,100,255,0.55) 0%, transparent 70%)',
+                background: 'radial-gradient(ellipse at center, rgba(98,38,144,0.15) 0%, transparent 70%)',
                 filter: 'blur(24px)',
               }}
             />
@@ -48,25 +49,23 @@ export default function OQueFazemos() {
               return (
                 <div
                   key={topic.headline}
-                  className="flex items-center gap-4 rounded-lg px-5 py-4 cursor-default transition-all duration-300 hover:scale-[1.02] hover:border-white/30"
+                  className="flex items-center gap-4 rounded-lg px-5 py-4 cursor-default"
                   style={{
-                    background: 'rgba(255,255,255,0.07)',
-                    backdropFilter: 'blur(12px)',
-                    WebkitBackdropFilter: 'blur(12px)',
-                    border: '1px solid rgba(255,255,255,0.12)',
+                    background: 'rgba(98,38,144,0.06)',
+                    border: '1px solid rgba(98,38,144,0.14)',
                     transition: 'transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease',
                   }}
                   onMouseEnter={e => {
                     const el = e.currentTarget
-                    el.style.background = 'rgba(255,255,255,0.13)'
-                    el.style.borderColor = 'rgba(255,255,255,0.28)'
-                    el.style.boxShadow = '0 8px 32px rgba(0,0,0,0.25)'
+                    el.style.background = 'rgba(98,38,144,0.11)'
+                    el.style.borderColor = 'rgba(98,38,144,0.28)'
+                    el.style.boxShadow = '0 8px 32px rgba(98,38,144,0.12)'
                     el.style.transform = 'scale(1.02)'
                   }}
                   onMouseLeave={e => {
                     const el = e.currentTarget
-                    el.style.background = 'rgba(255,255,255,0.07)'
-                    el.style.borderColor = 'rgba(255,255,255,0.12)'
+                    el.style.background = 'rgba(98,38,144,0.06)'
+                    el.style.borderColor = 'rgba(98,38,144,0.14)'
                     el.style.boxShadow = 'none'
                     el.style.transform = 'scale(1)'
                   }}
@@ -82,12 +81,12 @@ export default function OQueFazemos() {
                   {/* Texto */}
                   <div className="flex flex-col gap-1">
                     <h3
-                      className="text-base font-bold text-white uppercase"
-                      style={{ lineHeight: 1 }}
+                      className="text-base font-bold uppercase"
+                      style={{ color: '#622690', lineHeight: 1 }}
                     >
                       {topic.headline}
                     </h3>
-                    <p className="text-sm font-normal" style={{ color: 'rgba(255,255,255,0.7)' }}>
+                    <p className="text-sm font-normal" style={{ color: 'rgba(30,26,32,0.65)' }}>
                       {topic.descritivo}
                     </p>
                   </div>
