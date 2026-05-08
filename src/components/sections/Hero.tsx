@@ -13,28 +13,28 @@ export default function Hero() {
         src="assets/images/baackground-hero-smille.webp"
         alt=""
         aria-hidden="true"
-        className="relative w-full block"
+        className="relative w-full block min-h-[1200px] object-cover object-top md:min-h-0"
       />
 
       {/* Conteúdo sobreposto */}
       <div className="absolute inset-0 z-10 max-w-[1440px] mx-auto px-6 py-16 md:px-20 md:pt-[40px] md:pb-[40px] grid grid-cols-1 md:grid-cols-[1fr_420px] gap-6 md:gap-12 items-center w-full">
 
         {/* Esquerda */}
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-6 md:gap-10 items-center md:items-start text-center md:text-left">
 
           {/* Logo */}
           <img
             src="assets/logo-smille.svg"
             alt="Smille Hub"
-            className="h-12 w-auto self-start"
+            className="h-10 w-auto self-center md:self-start md:h-12"
           />
 
           {/* Textos */}
           <div className="flex flex-col gap-5">
-            <p className="text-[24px] font-medium text-[#1E1A20] leading-[1.1]">
-              Transforme investimento em<br />vendas previsíveis com
+            <p className="text-[14px] md:text-[24px] font-medium text-[#1E1A20] leading-[1.1]">
+              Transforme investimento em<br className="hidden md:block" />vendas previsíveis com
             </p>
-            <h1 className="text-[56px] font-bold uppercase" style={{ lineHeight: 1 }}>
+            <h1 className="text-[28px] md:text-[56px] font-bold uppercase" style={{ lineHeight: 1 }}>
               <span className="block text-[#ff8602]">Campanhas</span>
               <span className="block text-[#ff8602]">Digitais</span>
               <span className="block text-[#622690]">Inteligentes</span>

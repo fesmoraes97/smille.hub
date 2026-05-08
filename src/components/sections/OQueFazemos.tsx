@@ -13,7 +13,7 @@ export default function OQueFazemos() {
 
         {/* Headline */}
         <h2
-          className="text-4xl md:text-[40px] font-bold text-center uppercase"
+          className="text-[26px] md:text-[40px] font-bold text-center uppercase"
           style={{ color: '#622690', lineHeight: 'calc(1em + 4px)' }}
         >
           {O_QUE_FAZEMOS.HEADLINE_BEFORE}
@@ -37,7 +37,7 @@ export default function OQueFazemos() {
             <img
               src={O_QUE_FAZEMOS.IMAGE}
               alt="O que fazemos"
-              className="relative w-[520px]"
+              className="relative w-full max-w-[300px] md:w-[520px] md:max-w-none"
               style={{ borderRadius: '1rem' }}
             />
           </div>
@@ -49,7 +49,7 @@ export default function OQueFazemos() {
               return (
                 <div
                   key={topic.headline}
-                  className="flex items-center gap-4 rounded-lg px-5 py-4 cursor-default"
+                  className="flex flex-col items-center text-center md:flex-row md:items-center md:text-left gap-3 md:gap-4 rounded-lg px-5 py-4 cursor-default"
                   style={{
                     background: 'rgba(98,38,144,0.06)',
                     border: '1px solid rgba(98,38,144,0.14)',
@@ -81,12 +81,12 @@ export default function OQueFazemos() {
                   {/* Texto */}
                   <div className="flex flex-col gap-1">
                     <h3
-                      className="text-base font-bold uppercase"
+                      className="text-[14px] md:text-base font-bold uppercase"
                       style={{ color: '#622690', lineHeight: 1 }}
                     >
                       {topic.headline}
                     </h3>
-                    <p className="text-sm font-normal" style={{ color: 'rgba(30,26,32,0.65)' }}>
+                    <p className="text-[13px] md:text-sm font-normal" style={{ color: 'rgba(30,26,32,0.65)' }}>
                       {topic.descritivo}
                     </p>
                   </div>
