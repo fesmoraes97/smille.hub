@@ -6,7 +6,7 @@ const ICONS = [Target, Share2, Search, Gauge, Briefcase]
 export default function OQueFazemos() {
   return (
     <section
-      className="relative px-6 pt-16 pb-16 md:px-20 md:pt-[80px] md:pb-[80px]"
+      className="relative px-6 pt-[110px] pb-[110px] md:px-20"
       style={{ backgroundColor: '#fef7fe' }}
     >
       <div className="relative max-w-[1440px] mx-auto flex flex-col gap-12">

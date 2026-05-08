@@ -44,12 +44,9 @@ function BoxDescritivo({ index }: { index: number }) {
 
 export default function Estrategia() {
   return (
-    <section className="relative px-6 pb-[110px] md:px-20">
+    <section className="relative px-6 pt-[110px] pb-[110px] md:px-20">
 
-      {/* Divisória laranja */}
-      <div className="w-full h-[2px] mb-16 md:mb-[80px]" style={{ backgroundColor: '#ff8602' }} />
-
-      <div className="max-w-[1440px] mx-auto flex flex-col gap-12">
+<div className="max-w-[1440px] mx-auto flex flex-col gap-12">
 
         {/* Headline + Subline */}
         <div className="flex flex-col gap-6 text-center">
