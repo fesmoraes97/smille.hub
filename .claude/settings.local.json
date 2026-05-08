@@ -1,7 +1,13 @@
 {
   "permissions": {
     "allow": [
-      "Bash(dir D:\\\\Projetos\\\\Smille\\\\projeto\\\\public\\\\assets\\\\images *)"
+      "Bash(dir D:\\\\Projetos\\\\Smille\\\\projeto\\\\public\\\\assets\\\\images *)",
+      "Bash(dir D:\\\\Projetos\\\\Smille\\\\projeto\\\\src\\\\components\\\\sections *)",
+      "Bash(Get-ChildItem -Path \"D:\\\\Projetos\\\\Oratória de Elite\" -Recurse -ErrorAction SilentlyContinue)",
+      "Bash(Select-Object -First 20)",
+      "Bash(Format-Table FullName)",
+      "Bash(Get-ChildItem -Path \"D:\\\\Projetos\\\\Protocolo Zero Timidez\" -Depth 1 -ErrorAction SilentlyContinue)",
+      "Bash(Select-Object Name)"
     ]
   }
 }

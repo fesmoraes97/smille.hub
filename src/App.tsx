@@ -1,4 +1,5 @@
 import Background from '@/components/ui/Background'
+import { WhatsAppFloating } from '@/components/ui/WhatsAppFloating'
 import Hero from '@/components/sections/Hero'
 import QuemSomos from '@/components/sections/QuemSomos'
 import OQueFazemos from '@/components/sections/OQueFazemos'
@@ -60,6 +61,7 @@ export default function App() {
         <Formulario />
         <Footer />
       </main>
+      <WhatsAppFloating />
     </>
   )
 }
