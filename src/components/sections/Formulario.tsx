@@ -6,8 +6,17 @@ export default function Formulario() {
     <section className="relative overflow-hidden pt-[110px]" id="formulario">
       <div className="flex flex-col md:flex-row items-center">
 
-        {/* Esquerda — imagem 781×560, colada na borda, centralizada verticalmente */}
-        <div className="shrink-0 overflow-hidden" style={{ width: '921px', height: '660px' }}>
+        {/* Mobile — imagem em fluxo */}
+        <div className="w-full px-6 md:hidden">
+          <img
+            src="assets/images/img-2-mobile.webp"
+            alt=""
+            className="w-full block"
+          />
+        </div>
+
+        {/* Desktop — imagem com dimensões fixas */}
+        <div className="hidden md:block shrink-0 overflow-hidden" style={{ width: '921px', height: '660px' }}>
           <img
             src={FORMULARIO.IMAGE}
             alt=""
@@ -19,24 +28,41 @@ export default function Formulario() {
         <div className="flex-1 flex items-center justify-center px-6 py-16 md:px-[40px] md:py-[80px]">
           <div className="flex flex-col gap-8 w-full max-w-[700px]">
 
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 text-center md:text-left">
               <h2
-                className="text-4xl md:text-[40px] font-bold uppercase text-white"
+                className="text-[26px] md:text-[40px] font-bold uppercase text-white"
                 style={{ lineHeight: 'calc(1em + 4px)' }}
               >
-                Pronto para transformar
-                <br />
-                marketing em uma
-                <br />
-                <span style={{ color: '#ff8602' }}>máquina de vendas?</span>
+                {/* Mobile */}
+                <span className="md:hidden">
+                  Pronto para<br />
+                  transformar<br />
+                  marketing em uma<br />
+                  <span style={{ color: '#ff8602' }}>máquina de vendas?</span>
+                </span>
+                {/* Desktop */}
+                <span className="hidden md:inline">
+                  Pronto para transformar
+                  <br />
+                  marketing em uma
+                  <br />
+                  <span style={{ color: '#ff8602' }}>máquina de vendas?</span>
+                </span>
               </h2>
               <p
-                className="text-[22px]"
-                style={{ color: '#e4ccfd', lineHeight: 1.3 }}
+                className="text-[18px] md:text-[22px] text-white md:text-[#e4ccfd]"
+                style={{ lineHeight: 1.3 }}
               >
-                Se você quer parar de investir sem retorno e começar a
-                <br />
-                crescer com previsibilidade, esse é o momento.
+                <span className="md:hidden">
+                  Se você quer parar de investir sem<br />
+                  retorno e começar a crescer com<br />
+                  previsibilidade, esse é o momento.
+                </span>
+                <span className="hidden md:inline">
+                  Se você quer parar de investir sem retorno e começar a
+                  <br />
+                  crescer com previsibilidade, esse é o momento.
+                </span>
               </p>
             </div>
 
