@@ -11,7 +11,7 @@ export default function QuemSomos() {
           <div className="flex flex-col gap-8 md:pr-10 md:w-1/2">
             <div className="flex flex-col gap-4">
               <h2
-                className="text-3xl md:text-[38px] font-bold text-white"
+                className="text-[24px] md:text-[38px] font-bold text-white"
                 style={{ lineHeight: 'calc(1em + 6px)' }}
               >
                 {QUEM_SOMOS.HEADLINE}
@@ -23,8 +23,7 @@ export default function QuemSomos() {
               {QUEM_SOMOS.PARAGRAFOS.slice(0, 2).map((p, i) => (
                 <p
                   key={i}
-                  className="text-[17px]"
-                  style={{ color: 'rgba(255,255,255,0.8)', lineHeight: 1.7 }}
+                  className="text-[17px] text-white md:text-white/80 leading-[1.5] md:leading-[1.7] text-pretty"
                 >
                   {p}
                 </p>
@@ -43,12 +42,7 @@ export default function QuemSomos() {
               {QUEM_SOMOS.PARAGRAFOS.slice(2).map((p, i) => (
                 <p
                   key={i}
-                  className="text-[17px]"
-                  style={{
-                    color: i === 0 ? 'rgba(255,255,255,1)' : 'rgba(255,255,255,0.8)',
-                    lineHeight: 1.7,
-                    fontWeight: i === 0 ? 600 : 400,
-                  }}
+                  className={`text-[17px] text-white leading-[1.5] md:leading-[1.7] text-pretty ${i === 0 ? 'font-semibold' : 'md:text-white/80'}`}
                 >
                   {p}
                 </p>
@@ -62,7 +56,7 @@ export default function QuemSomos() {
                 background: 'rgba(255,255,255,0.06)',
               }}
             >
-              <p className="text-[19px] font-semibold text-white italic" style={{ lineHeight: 1.4 }}>
+              <p className="text-[17px] md:text-[19px] font-semibold text-white italic" style={{ lineHeight: 1.4 }}>
                 {QUEM_SOMOS.FECHAMENTO}
               </p>
             </div>
