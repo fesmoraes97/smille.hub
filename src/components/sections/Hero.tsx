@@ -8,41 +8,54 @@ export default function Hero() {
   return (
     <section className="relative" id="hero">
 
-      {/* Imagem — define a altura da seção */}
+      {/* Desktop — imagem de fundo que define a altura da seção */}
       <img
         src="assets/images/baackground-hero-smille.webp"
         alt=""
         aria-hidden="true"
-        className="relative w-full block min-h-[1200px] object-cover object-top md:min-h-0"
+        className="relative w-full hidden md:block"
       />
 
-      {/* Conteúdo sobreposto */}
-      <div className="absolute inset-0 z-10 max-w-[1440px] mx-auto px-6 py-16 md:px-20 md:pt-[40px] md:pb-[40px] grid grid-cols-1 md:grid-cols-[1fr_420px] gap-6 md:gap-12 items-center w-full">
+      {/* Mobile — imagem em fluxo, antes do conteúdo */}
+      <img
+        src="assets/images/bg-hero-mobile-v2.webp"
+        alt=""
+        aria-hidden="true"
+        className="w-full block md:hidden"
+      />
+
+      {/* Conteúdo: relativo no mobile, absoluto no desktop */}
+      <div className="relative md:absolute md:inset-0 z-10 max-w-[1440px] mx-auto px-6 py-16 md:px-20 md:pt-[40px] md:pb-[40px] grid grid-cols-1 md:grid-cols-[1fr_420px] gap-6 md:gap-12 md:items-center w-full -mt-20 md:mt-0">
 
         {/* Esquerda */}
         <div className="flex flex-col gap-6 md:gap-10 items-center md:items-start text-center md:text-left">
 
           {/* Logo */}
           <img
+            src="assets/logo-smille-white.svg"
+            alt="Smille Hub"
+            className="h-10 w-auto self-center md:hidden"
+          />
+          <img
             src="assets/logo-smille.svg"
             alt="Smille Hub"
-            className="h-10 w-auto self-center md:self-start md:h-12"
+            className="h-12 w-auto self-start hidden md:block"
           />
 
           {/* Textos */}
           <div className="flex flex-col gap-5">
-            <p className="text-[14px] md:text-[24px] font-medium text-[#1E1A20] leading-[1.1]">
-              Transforme investimento em<br className="hidden md:block" />vendas previsíveis com
+            <p className="text-[16px] md:text-[24px] font-medium text-white md:text-[#1E1A20] leading-[1.1] text-center md:text-left">
+              Transforme investimento em<br />vendas previsíveis com
             </p>
-            <h1 className="text-[28px] md:text-[56px] font-bold uppercase" style={{ lineHeight: 1 }}>
+            <h1 className="text-[34px] md:text-[56px] font-bold uppercase" style={{ lineHeight: 1 }}>
               <span className="block text-[#ff8602]">Campanhas</span>
               <span className="block text-[#ff8602]">Digitais</span>
-              <span className="block text-[#622690]">Inteligentes</span>
+              <span className="block text-white md:text-[#622690]">Inteligentes</span>
             </h1>
           </div>
 
           {/* Pills + CTA */}
-          <div className="flex flex-col gap-3 w-fit">
+          <div className="flex flex-col gap-3 items-center md:items-start mx-auto md:mx-0">
 
             {HERO.PILLS.map((text, i) => {
               const Icon = PILL_ICONS[i]
@@ -64,7 +77,7 @@ export default function Hero() {
             {/* CTA */}
             <a
               href="#formulario"
-              className="cta-button inline-flex items-center justify-center text-white font-bold text-sm uppercase tracking-widest px-10 py-4 rounded-lg w-fit min-h-[52px] mt-1"
+              className="cta-button hidden md:inline-flex items-center justify-center text-white font-bold text-sm uppercase tracking-widest px-10 py-4 rounded-lg w-fit min-h-[52px] mt-1"
             >
               {HERO.CTA}
             </a>
