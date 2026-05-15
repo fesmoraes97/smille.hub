@@ -13,13 +13,22 @@ export default function OQueFazemos() {
 
         {/* Headline */}
         <h2
-          className="text-[26px] md:text-[40px] font-bold text-center uppercase"
+          className="text-[24px] md:text-[40px] font-bold text-center uppercase"
           style={{ color: '#622690', lineHeight: 'calc(1em + 4px)' }}
         >
-          {O_QUE_FAZEMOS.HEADLINE_BEFORE}
-          <br className="hidden md:block" />
-          <span style={{ color: '#ff8602' }}>{O_QUE_FAZEMOS.HEADLINE_HIGHLIGHT}</span>
-          {O_QUE_FAZEMOS.HEADLINE_AFTER}
+          {/* Mobile */}
+          <span className="md:hidden">
+            Estratégias pensadas<br />
+            para <span style={{ color: '#ff8602' }}>gerar resultado,</span><br />
+            não só tráfego
+          </span>
+          {/* Desktop */}
+          <span className="hidden md:inline">
+            {O_QUE_FAZEMOS.HEADLINE_BEFORE}
+            <br />
+            <span style={{ color: '#ff8602' }}>{O_QUE_FAZEMOS.HEADLINE_HIGHLIGHT}</span>
+            {O_QUE_FAZEMOS.HEADLINE_AFTER}
+          </span>
         </h2>
 
         {/* Corpo */}
@@ -35,9 +44,15 @@ export default function OQueFazemos() {
               }}
             />
             <img
+              src="assets/images/img-1-mobile.webp"
+              alt="O que fazemos"
+              className="relative w-full max-w-[300px] md:hidden"
+              style={{ borderRadius: '1rem' }}
+            />
+            <img
               src={O_QUE_FAZEMOS.IMAGE}
               alt="O que fazemos"
-              className="relative w-full max-w-[300px] md:w-[520px] md:max-w-none"
+              className="relative hidden md:block md:w-[520px] md:max-w-none"
               style={{ borderRadius: '1rem' }}
             />
           </div>
@@ -72,21 +87,21 @@ export default function OQueFazemos() {
                 >
                   {/* Ícone */}
                   <div
-                    className="flex items-center justify-center rounded-lg shrink-0"
-                    style={{ backgroundColor: '#ff8602', width: 44, height: 44 }}
+                    className="flex items-center justify-center rounded-lg shrink-0 w-[60px] h-[60px] md:w-[44px] md:h-[44px]"
+                    style={{ backgroundColor: '#ff8602' }}
                   >
-                    <Icon size={20} className="text-white" />
+                    <Icon size={20} className="text-white w-8 h-8 md:w-5 md:h-5" />
                   </div>
 
                   {/* Texto */}
-                  <div className="flex flex-col gap-1">
+                  <div className="flex flex-col gap-[6px] md:gap-1">
                     <h3
-                      className="text-[14px] md:text-base font-bold uppercase"
+                      className="text-[20px] md:text-base font-bold uppercase"
                       style={{ color: '#622690', lineHeight: 1 }}
                     >
                       {topic.headline}
                     </h3>
-                    <p className="text-[13px] md:text-sm font-normal" style={{ color: 'rgba(30,26,32,0.65)' }}>
+                    <p className="text-[16px] md:text-sm font-normal text-pretty leading-snug md:leading-normal" style={{ color: 'rgba(30,26,32,0.65)' }}>
                       {topic.descritivo}
                     </p>
                   </div>
