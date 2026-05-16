@@ -39,8 +39,8 @@ export default function Footer() {
       {/* Conteúdo principal */}
       <div className="max-w-[1440px] mx-auto px-6 py-16 md:px-20 md:py-[80px] grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
 
-        {/* Esquerda — Endereço */}
-        <div>
+        {/* Esquerda — Endereço (apenas desktop) */}
+        <div className="hidden md:block md:order-1">
           <Label>{FOOTER.ENDERECO.label}</Label>
           <p className="text-white/80 text-sm leading-relaxed">
             {FOOTER.ENDERECO.linha1}<br />
@@ -50,17 +50,17 @@ export default function Footer() {
         </div>
 
         {/* Centro — Logo */}
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center order-1 md:order-2">
           <img
             src="assets/logo-smille.svg"
             alt="Smille Hub"
-            className="h-16 w-auto"
+            className="h-10 md:h-16 w-auto"
             style={{ filter: 'brightness(0) invert(1)' }}
           />
         </div>
 
-        {/* Direita — E-mail, Funcionamento, Telefone, Redes */}
-        <div className="flex flex-col gap-6">
+        {/* Direita — E-mail, Funcionamento, Telefone, Redes (apenas desktop) */}
+        <div className="hidden md:flex flex-col gap-6 md:order-3">
 
           <div>
             <Label>{FOOTER.EMAIL.label}</Label>
@@ -80,6 +80,53 @@ export default function Footer() {
           <div>
             <Label>{FOOTER.REDES.label}</Label>
             <div className="flex items-center gap-4">
+              <a href={FOOTER.REDES.facebook} target="_blank" rel="noopener noreferrer"
+                className="text-white/70 hover:text-white transition-colors">
+                <IconFacebook />
+              </a>
+              <a href={FOOTER.REDES.instagram} target="_blank" rel="noopener noreferrer"
+                className="text-white/70 hover:text-white transition-colors">
+                <IconInstagram />
+              </a>
+              <a href={FOOTER.REDES.linkedin} target="_blank" rel="noopener noreferrer"
+                className="text-white/70 hover:text-white transition-colors">
+                <IconLinkedin />
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        {/* Mobile — tudo junto, centralizado */}
+        <div className="md:hidden order-2 flex flex-col gap-5 text-center items-center">
+
+          <div>
+            <Label>{FOOTER.ENDERECO.label}</Label>
+            <p className="text-white/80 text-sm leading-relaxed">
+              {FOOTER.ENDERECO.linha1}<br />
+              {FOOTER.ENDERECO.linha2}<br />
+              {FOOTER.ENDERECO.cep}
+            </p>
+          </div>
+
+          <div>
+            <Label>{FOOTER.EMAIL.label}</Label>
+            <p className="text-white/80 text-sm">{FOOTER.EMAIL.valor}</p>
+          </div>
+
+          <div>
+            <Label>{FOOTER.FUNCIONAMENTO.label}</Label>
+            <p className="text-white/80 text-sm">{FOOTER.FUNCIONAMENTO.valor}</p>
+          </div>
+
+          <div>
+            <Label>{FOOTER.TELEFONE.label}</Label>
+            <p className="text-white/80 text-sm">{FOOTER.TELEFONE.valor}</p>
+          </div>
+
+          <div>
+            <Label>{FOOTER.REDES.label}</Label>
+            <div className="flex items-center justify-center gap-4">
               <a href={FOOTER.REDES.facebook} target="_blank" rel="noopener noreferrer"
                 className="text-white/70 hover:text-white transition-colors">
                 <IconFacebook />

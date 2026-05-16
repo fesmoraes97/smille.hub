@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 
 export const WhatsAppFloating = () => {
-  const whatsappUrl = '#'
+  const whatsappUrl = 'https://wa.me/5511920178612?text=Ol%C3%A1%2C%20vim%20do%20site%20da%20Smille%20Hub%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20marketing.'
 
   return (
     <motion.a

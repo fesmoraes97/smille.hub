@@ -49,7 +49,15 @@ export default function ContactForm({ showTitle = true }: ContactFormProps) {
     e.preventDefault()
     setTouched({ nome: true, email: true, whatsapp: true, faturamento: true, mensagem: true })
     if (errors.nome || errors.email || errors.whatsapp || errors.faturamento) return
-    console.log('Enviando para:', CONFIG.FORM_ENDPOINT, fields)
+
+    try {
+      const url = new URL(CONFIG.FORM_ENDPOINT)
+      Object.entries(fields).forEach(([key, value]) => url.searchParams.append(key, value))
+      await fetch(url.toString(), { mode: 'no-cors' })
+    } catch {
+      // falha silenciosa — não bloqueia o agradecimento
+    }
+
     setSubmitted(true)
   }
 

@@ -1,6 +1,6 @@
 export const CONFIG = {
   // ⚠️ PENDENTE — preencher antes do deploy
-  FORM_ENDPOINT: '⚠️ PENDENTE',
+  FORM_ENDPOINT: 'https://script.google.com/macros/s/AKfycbymAxRCMnD3x0SpF4-VrP5LiZhoeGb915IbSFRMXnoKaRKVJrOQZSS0m6H_qCNlDIL6/exec',
   WHATSAPP_URL: '⚠️ PENDENTE',
   WHATSAPP_NUMBER: '⚠️ PENDENTE',
   CONTACT_EMAIL: '⚠️ PENDENTE',
@@ -69,9 +69,9 @@ export const ESTRATEGIA = {
 export const FOOTER = {
   ENDERECO: {
     label: 'Endereço',
-    linha1: 'Rua Lorem Ipsum, 000',
-    linha2: 'Bairro, Cidade/UF',
-    cep: 'CEP: 00000-000',
+    linha1: 'Rua Cristóvão Jaques, 190',
+    linha2: 'Vila João Ramalho, Santo André/SP',
+    cep: 'CEP: 09170-030',
   },
   EMAIL: {
     label: 'E-mail',
@@ -83,13 +83,13 @@ export const FOOTER = {
   },
   TELEFONE: {
     label: 'Telefone',
-    valor: '11 91234-5678',
+    valor: '11 92017-8612',
   },
   REDES: {
     label: 'Redes Sociais',
-    facebook: 'https://facebook.com',
-    instagram: 'https://instagram.com',
-    linkedin: 'https://linkedin.com',
+    facebook: '#',
+    instagram: 'https://www.instagram.com/smille.hub',
+    linkedin: '#',
   },
   COPYRIGHT: 'Smille.Hub Marketing Digital - Todos os Direitos Reservados',
 } as const
