@@ -195,11 +195,13 @@ type SelectFieldProps = {
 }
 
 function SelectField({ label, value, onChange, onBlur, error, options }: SelectFieldProps) {
+  const id = label.toLowerCase().replace(/\s+/g, '-')
   return (
     <div className="flex flex-col gap-1">
-      <label className="text-sm font-medium text-[#1E1A20]">{label}</label>
+      <label htmlFor={id} className="text-sm font-medium text-[#1E1A20]">{label}</label>
       <div className="relative">
         <select
+          id={id}
           className={cn(
             'w-full px-4 py-3 pr-10 rounded-lg border text-sm text-[#1E1A20] outline-none transition-colors bg-gray-50 focus:bg-white focus:border-[#622690] appearance-none cursor-pointer',
             error ? 'border-red-400' : 'border-gray-200',

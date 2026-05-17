@@ -81,15 +81,15 @@ export default function Footer() {
             <Label>{FOOTER.REDES.label}</Label>
             <div className="flex items-center gap-4">
               <a href={FOOTER.REDES.facebook} target="_blank" rel="noopener noreferrer"
-                className="text-white/70 hover:text-white transition-colors">
+                className="text-white/70 hover:text-white transition-colors" aria-label="Facebook">
                 <IconFacebook />
               </a>
               <a href={FOOTER.REDES.instagram} target="_blank" rel="noopener noreferrer"
-                className="text-white/70 hover:text-white transition-colors">
+                className="text-white/70 hover:text-white transition-colors" aria-label="Instagram">
                 <IconInstagram />
               </a>
               <a href={FOOTER.REDES.linkedin} target="_blank" rel="noopener noreferrer"
-                className="text-white/70 hover:text-white transition-colors">
+                className="text-white/70 hover:text-white transition-colors" aria-label="LinkedIn">
                 <IconLinkedin />
               </a>
             </div>
@@ -128,15 +128,15 @@ export default function Footer() {
             <Label>{FOOTER.REDES.label}</Label>
             <div className="flex items-center justify-center gap-4">
               <a href={FOOTER.REDES.facebook} target="_blank" rel="noopener noreferrer"
-                className="text-white/70 hover:text-white transition-colors">
+                className="text-white/70 hover:text-white transition-colors" aria-label="Facebook">
                 <IconFacebook />
               </a>
               <a href={FOOTER.REDES.instagram} target="_blank" rel="noopener noreferrer"
-                className="text-white/70 hover:text-white transition-colors">
+                className="text-white/70 hover:text-white transition-colors" aria-label="Instagram">
                 <IconInstagram />
               </a>
               <a href={FOOTER.REDES.linkedin} target="_blank" rel="noopener noreferrer"
-                className="text-white/70 hover:text-white transition-colors">
+                className="text-white/70 hover:text-white transition-colors" aria-label="LinkedIn">
                 <IconLinkedin />
               </a>
             </div>
