@@ -5,7 +5,7 @@ services:
     image: smille-hub:latest
     build: .
     networks:
-      - PENDENTE_REDE_DOCKER
+      - SmilleNet
     deploy:
       mode: replicated
       replicas: 1
@@ -14,7 +14,7 @@ services:
           - node.role == manager
       labels:
         - traefik.enable=true
-        - traefik.http.routers.smille-hub.rule=Host(`PENDENTE_DOMINIO`)
+        - traefik.http.routers.smille-hub.rule=Host(`smillehub.com`)
         - traefik.http.routers.smille-hub.entrypoints=websecure
         - traefik.http.routers.smille-hub.tls.certresolver=letsencryptresolver
         - traefik.http.routers.smille-hub.service=smille-hub
@@ -22,6 +22,6 @@ services:
         - traefik.http.services.smille-hub.loadbalancer.passHostHeader=true
 
 networks:
-  PENDENTE_REDE_DOCKER:
-    name: PENDENTE_REDE_DOCKER
+  SmilleNet:
+    name: SmilleNet
     external: true

@@ -1,13 +1,6 @@
 export const CONFIG = {
-  // ⚠️ PENDENTE — preencher antes do deploy
   FORM_ENDPOINT: 'https://script.google.com/macros/s/AKfycbymAxRCMnD3x0SpF4-VrP5LiZhoeGb915IbSFRMXnoKaRKVJrOQZSS0m6H_qCNlDIL6/exec',
-  WHATSAPP_URL: '⚠️ PENDENTE',
-  WHATSAPP_NUMBER: '⚠️ PENDENTE',
-  CONTACT_EMAIL: '⚠️ PENDENTE',
-  CONTACT_PHONE: '⚠️ PENDENTE',
-  DOMAIN: '⚠️ PENDENTE',
-
-  // Dados confirmados
+  DOMAIN: 'https://smillehub.com',
   COMPANY_NAME: 'Smille Hub',
 } as const
 
