@@ -48,12 +48,14 @@ export default function OQueFazemos() {
               alt="O que fazemos"
               className="relative w-full max-w-[300px] md:hidden"
               style={{ borderRadius: '1rem' }}
+              loading="lazy"
             />
             <img
               src={O_QUE_FAZEMOS.IMAGE}
               alt="O que fazemos"
               className="relative hidden md:block md:w-[520px] md:max-w-none"
               style={{ borderRadius: '1rem' }}
+              loading="lazy"
             />
           </div>
 

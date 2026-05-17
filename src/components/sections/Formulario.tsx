@@ -12,6 +12,7 @@ export default function Formulario() {
             src="assets/images/img-2-mobile.webp"
             alt=""
             className="w-full block"
+            loading="lazy"
           />
         </div>
 
@@ -21,6 +22,7 @@ export default function Formulario() {
             src={FORMULARIO.IMAGE}
             alt=""
             className="w-full h-full object-cover block"
+            loading="lazy"
           />
         </div>
 

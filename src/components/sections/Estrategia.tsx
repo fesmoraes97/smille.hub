@@ -86,6 +86,7 @@ export default function Estrategia() {
                   src={box.image}
                   alt={box.headline}
                   className="w-full block"
+                  loading="lazy"
                 />
                 <div className="absolute bottom-0 left-0 right-0 p-5">
                   <h3 className="text-[20px] md:text-[24px] font-bold text-white mb-3 md:mb-1" style={{ lineHeight: 1 }}>

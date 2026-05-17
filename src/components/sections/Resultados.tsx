@@ -74,12 +74,14 @@ export default function Resultados() {
             alt="Resultados"
             className="w-full max-w-[480px] md:hidden"
             style={{ borderRadius: '1.5rem' }}
+            loading="lazy"
           />
           <img
             src={RESULTADOS.IMAGE}
             alt="Resultados"
             className="hidden md:block md:w-[480px]"
             style={{ borderRadius: '1.5rem' }}
+            loading="lazy"
           />
         </div>
 
