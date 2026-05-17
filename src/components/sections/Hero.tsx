@@ -6,15 +6,10 @@ const PILL_ICONS = [Target, TrendingUp, Users]
 
 export default function Hero() {
   return (
-    <section className="relative" id="hero">
-
-      {/* Desktop — imagem de fundo que define a altura da seção */}
-      <img
-        src="assets/images/baackground-hero-smille.webp"
-        alt=""
-        aria-hidden="true"
-        className="relative w-full hidden md:block"
-      />
+    <section
+      className="relative"
+      id="hero"
+    >
 
       {/* Mobile — imagem em fluxo, antes do conteúdo */}
       <img
@@ -24,8 +19,8 @@ export default function Hero() {
         className="w-full block md:hidden"
       />
 
-      {/* Conteúdo: relativo no mobile, absoluto no desktop */}
-      <div className="relative md:absolute md:inset-0 z-10 max-w-[1440px] mx-auto px-6 py-16 md:px-20 md:pt-[40px] md:pb-[40px] grid grid-cols-1 md:grid-cols-[1fr_420px] gap-6 md:gap-12 md:items-center w-full -mt-20 md:mt-0">
+      {/* Conteúdo */}
+      <div className="relative z-10 max-w-[1440px] mx-auto px-6 py-16 md:px-20 md:py-[60px] grid grid-cols-1 md:grid-cols-[1fr_420px] gap-6 md:gap-12 md:items-center w-full -mt-20 md:mt-0">
 
         {/* Esquerda */}
         <div className="flex flex-col gap-6 md:gap-10 items-center md:items-start text-center md:text-left">

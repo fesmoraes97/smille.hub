@@ -17,6 +17,7 @@
   --spacing-gap-mobile: 24px;
 
   --container-max: 1440px;
+
 }
 
 @layer base {
@@ -63,6 +64,21 @@
   10%  { opacity: 1; }
   90%  { opacity: 1; }
   100% { left: 130%; opacity: 0; }
+}
+
+@media (min-width: 768px) {
+  #hero {
+    background-image: url('/assets/images/background-hero-smille-1024.webp');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+  }
+}
+
+@media (min-width: 1280px) {
+  #hero {
+    background-image: url('/assets/images/baackground-hero-smille.webp');
+  }
 }
 
 body {

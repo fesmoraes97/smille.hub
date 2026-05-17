@@ -15,8 +15,8 @@ export default function Formulario() {
           />
         </div>
 
-        {/* Desktop — imagem com dimensões fixas */}
-        <div className="hidden md:block shrink-0 overflow-hidden" style={{ width: '921px', height: '660px' }}>
+        {/* Desktop — imagem responsiva com aspect-ratio */}
+        <div className="hidden md:block shrink-0 overflow-hidden w-[50%]" style={{ aspectRatio: '921/660' }}>
           <img
             src={FORMULARIO.IMAGE}
             alt=""
