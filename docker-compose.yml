@@ -14,7 +14,7 @@ services:
           - node.role == manager
       labels:
         - traefik.enable=true
-        - traefik.http.routers.smille-hub.rule=Host(`smillehub.com`)
+        - traefik.http.routers.smille-hub.rule=Host(`smillehub.com`) || Host(`www.smillehub.com`) || Host(`smillehub.com.br`) || Host(`www.smillehub.com.br`)
         - traefik.http.routers.smille-hub.entrypoints=websecure
         - traefik.http.routers.smille-hub.tls.certresolver=letsencryptresolver
         - traefik.http.routers.smille-hub.service=smille-hub
