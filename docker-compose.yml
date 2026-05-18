@@ -26,7 +26,7 @@ services:
         - traefik.http.routers.smille-hub-redirect.middlewares=redirect-to-main
         - traefik.http.routers.smille-hub-redirect.service=smille-hub
         - traefik.http.middlewares.redirect-to-main.redirectregex.regex=^https?://(www\.smillehub\.com|smillehub\.com\.br|www\.smillehub\.com\.br)(.*)
-        - traefik.http.middlewares.redirect-to-main.redirectregex.replacement=https://smillehub.com${2}
+        - traefik.http.middlewares.redirect-to-main.redirectregex.replacement=https://smillehub.com$${2}
         - traefik.http.middlewares.redirect-to-main.redirectregex.permanent=true
 
 networks:
