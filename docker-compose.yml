@@ -14,12 +14,20 @@ services:
           - node.role == manager
       labels:
         - traefik.enable=true
-        - traefik.http.routers.smille-hub.rule=Host(`smillehub.com`) || Host(`www.smillehub.com`) || Host(`smillehub.com.br`) || Host(`www.smillehub.com.br`)
+        - traefik.http.routers.smille-hub.rule=Host(`smillehub.com`)
         - traefik.http.routers.smille-hub.entrypoints=websecure
         - traefik.http.routers.smille-hub.tls.certresolver=letsencryptresolver
         - traefik.http.routers.smille-hub.service=smille-hub
         - traefik.http.services.smille-hub.loadbalancer.server.port=80
         - traefik.http.services.smille-hub.loadbalancer.passHostHeader=true
+        - traefik.http.routers.smille-hub-redirect.rule=Host(`www.smillehub.com`) || Host(`smillehub.com.br`) || Host(`www.smillehub.com.br`)
+        - traefik.http.routers.smille-hub-redirect.entrypoints=websecure
+        - traefik.http.routers.smille-hub-redirect.tls.certresolver=letsencryptresolver
+        - traefik.http.routers.smille-hub-redirect.middlewares=redirect-to-main
+        - traefik.http.routers.smille-hub-redirect.service=smille-hub
+        - traefik.http.middlewares.redirect-to-main.redirectregex.regex=^https?://(www\.smillehub\.com|smillehub\.com\.br|www\.smillehub\.com\.br)(.*)
+        - traefik.http.middlewares.redirect-to-main.redirectregex.replacement=https://smillehub.com${2}
+        - traefik.http.middlewares.redirect-to-main.redirectregex.permanent=true
 
 networks:
   SmilleNet:
